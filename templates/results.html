@@ -31,7 +31,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin: auto;
   }
-  
+
 
   h2 {
     text-align: center;
@@ -71,21 +71,24 @@
     font-family: system-ui, -apple-system;
   }
 
-  .content-table tbody tr:nth-of-type(even){
+  .content-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
   }
 
   .content-table tbody tr:last-of-type {
     background-color: 2px solid #009879;
   }
-  .btn.btn-outline-dark.btn-sm{
+
+  .btn.btn-outline-dark.btn-sm {
     color: #ffffff;
   }
-  .link{
+
+  .link {
     text-decoration: none;
-    color:#000000
+    color: #000000
   }
-  .link:hover{
+
+  .link:hover {
     text-decoration: none;
     color: #f3f3f3;
 
@@ -108,8 +111,8 @@
         <!-- <th>Comment</th> -->
       </tr>
     </thead>
-    {% for review in reviews %}
     <tbody>
+      {% for review in reviews %}
       <tr>
         <td>{{loop.index}}</td>
         <td><a href="{{review['video_URL']}}" target="_blank">{{review['video_URL']}}</a></td>
@@ -118,8 +121,10 @@
         <td>{{review['Views']}}</td>
         <td><a href="{{review['Thumbnail_link']}}" target="_blank">{{review['Thumbnail_link']}}</a></td>
         <td>
-          <button type="button" class="btn btn-outline-dark btn-sm mx=1"><a class="link" href="/download/{{review['id']}}" target="_blank">Download</a></button>
-          <button type="button" class="btn btn-outline-dark btn-sm mx=1"><a class="link" href="/comments/{{review['id']}}"  target="_blank">Comment</a></button>
+          <button type="button" class="btn btn-outline-dark btn-sm mx=1"><a class="link"
+              href="/download/{{review['id']}}" target="_blank">Download</a></button>
+          <button type="button" class="btn btn-outline-dark btn-sm mx=1"><a class="link"
+              href="/comments/{{review['id']}}" target="_blank">Comment</a></button>
         </td>
         <!-- <td><a href="/comments/{{review['id']}}" target="_blank">Comment</a></td> -->
       </tr>
