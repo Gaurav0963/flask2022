@@ -57,12 +57,13 @@ def index():
 @app.route('/download/<text>', methods=['GET', 'POST'])
 def mylink(text):
     vdnld = pafy.new(text)
+    filename = vdnld.title
     quality = vdnld.getbest()
     q = quality.get_filesize()
     try:
-        filename = quality.download('D:/')
-	return render_template("dnld.html", Filesize=(q//1024))
-#         return '<h2 style="color: red;">Filesize={}Kb; Downloaded and saved in D drive</h2>'.format(q/1024)
+        quality.download('D:/')
+        # return '<h2 style="color: red;">Filesize={}KB; <br>Downloaded and saved in D drive</h2>'.format(q//1024)
+        return render_template("dnld.html", Filesize=(q//1024))
     except Exception as e:
         print(e)
         return 'Error'
@@ -83,4 +84,4 @@ def comment(vid):
 
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(port='8000',debug=True)
