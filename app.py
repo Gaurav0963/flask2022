@@ -61,7 +61,8 @@ def mylink(text):
     q = quality.get_filesize()
     try:
         filename = quality.download('D:/')
-        return '<h2 style="color: red;">Filesize={}Kb; Downloaded and saved in D drive</h2>'.format(q/1024)
+	return render_template("dnld.html", Filesize=(q//1024))
+#         return '<h2 style="color: red;">Filesize={}Kb; Downloaded and saved in D drive</h2>'.format(q/1024)
     except Exception as e:
         print(e)
         return 'Error'
