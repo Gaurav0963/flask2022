@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'ytstatgsr'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3CF35DE47A2941DDBDCC9B3F78D14C59 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AADB0FC5DCC942BBBBCCE2A50A472F1B }}
